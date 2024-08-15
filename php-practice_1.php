@@ -4,16 +4,17 @@ $name = '下崎';
     echo '私の名前は「' . $name . '」です。';
 
 // Q2 四則演算
-$num = 5*4;
+$num = 20;
 
     echo($num) . "\n";
         $num = $num / 2;
     echo($num);
 
 // Q3 日付操作
-$today = date("Y年m月d日 H時m分s秒");
+$today = date("Y年m月d日 H時i分s秒")
     
-    echo '現在の時刻は' . $today . 'です。'
+    echo '現在の時刻は' . $today . 'です。';
+    
 
 // Q4 条件分岐-1 if文
 $device = 'mac';

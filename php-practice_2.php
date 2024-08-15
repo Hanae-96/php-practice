@@ -61,7 +61,7 @@ class Student
         $this->studentName = $name;
     }
 
-    public function attend()
+    public function ()
     {
         echo '授業に出席しました。';
     }
@@ -70,7 +70,7 @@ class Student
         echo '学籍番号' . $ueda->studentId . '番の生徒は' . $ueda->studentName . 'です。';
 
 // Q4 オブジェクト-2
-class Student
+class Studentattend
 {
     public $studentId; 
     public $studentName;
@@ -82,10 +82,10 @@ class Student
         $this->studentName = $name;
     }
 
-    public function attend($PHP)
+    public function attend($lesson)
     {
         
-        echo $this->studentName . 'は' . $PHP . 'の授業に参加しました。' . '学籍番号：' . $this->studentId;
+        echo $this->studentName . 'は' . $lesson . 'の授業に参加しました。' . '学籍番号：' . $this->studentId;
     }
 }
 

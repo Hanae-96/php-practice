@@ -4,14 +4,15 @@ $name = '下崎';
     echo '私の名前は「' . $name . '」です。';
 
 // Q2 四則演算
-$num = 20;
+$num = 5*4;
 
     echo($num) . "\n";
         $num = $num / 2;
     echo($num);
 
 // Q3 日付操作
-$today = date("Y年m月d日 H時i分s秒")
+date_default_timezone_set('Asia/Tokyo');
+$today = date("Y年m月d日 H時i分s秒");
     
     echo '現在の時刻は' . $today . 'です。';
     
@@ -28,28 +29,28 @@ if ($device === 'windows' || $device === 'mac') {
 // Q5 条件分岐-2 三項演算子
 $age = 27;
 
-$message = ($age <= 18) ? '成人です。' : '未成年です。';
+$message = ($age >= 18) ? '成人です。' : '未成年です。';
     echo $message;
 
 // Q6 配列
+<?php
 $prefectures = ['東京都', '千葉県', '神奈川県', '埼玉県', '茨城県', '栃木県', '群馬県'];
 
-if ('神奈川県' && '埼玉県');
-    echo '神奈川県と埼玉県は関東地方の都道府県です';
+    echo $prefectures[2] . "と". $prefectures[3] . "は関東地方の都道府県です";
+?>
 
 // Q7 連想配列-1
 $kregion = ['東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市'];
 
-foreach ($kregion as $key => $value) {
-    echo $kregion[$key] . "\n";
+foreach ($kregion as $prefectures => $cities) {
+    echo $cities . "\n";
 }
-
 // Q8 連想配列-2
 $kregion = ['東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市'];
 
-foreach ($kregion as $key => $value) {
-    if ($key === '埼玉県') {
-        echo "{$key}の県庁所在地は{$value}です。";
+foreach ($kregion as $prefectures => $cities) {
+    if ($prefectures === '埼玉県') {
+        echo $prefectures . "の県庁所在地は" . $cities . "です。";
         break;
     }
 }
@@ -60,22 +61,21 @@ $kregion['大阪府'] = '大阪市';
 $kregion['愛知県'] = '名古屋市';
 
     foreach ($kregion as $key => $value) {
-        if ($key === '東京都' || $key === '神奈川県' || $key === '千葉県' || $key === '埼玉県' || $key === '栃木県' || $key === '群馬県' || $key === '茨城県') {
-            echo "{$key}の県庁所在地は、{$value}です。" . "\n";
+        if ($key === '大阪府' || $key === '愛知県') {
+            echo $key . "は関東地方ではありません。" . "\n";
         } else {
-            echo "{$key}は関東地方ではありません。" . "\n";
-                break;
+            echo $key . "の県庁所在地は、" . $value . "です。" . "\n";
         }
     }
 
 // Q10 関数-1
 function hello($name) {
-
-  echo $name . 'さん、こんにちは。' . "\n";
-}
-
-hello('上田');
-hello('大橋');
+    echo $name . 'さん、こんにちは。' . "\n";
+      return;
+  }
+  
+  hello('上田');
+  hello('大橋');
 
 // Q11 関数-2
 function calcTaxInPrice($price) {

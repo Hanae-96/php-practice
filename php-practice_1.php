@@ -79,25 +79,30 @@ function hello($name) {
 
 // Q11 関数-2
 function calcTaxInPrice($price) {
-
-  $price = $price * 1.1;
-  return $price;
+    
+    $taxInPrice = $price * 1.1; {
+    echo $price . "円の税込み価格は" . $taxInPrice . "円です。" . "\n";
+    return $price;
+    }
 }
-  echo "1000円の税込み価格は" . calcTaxInPrice(1000) . "円です。";
+
+$taxInPrice = calcTaxInprice(1000);
 
 // Q12 関数とif文
 function distinguishNum($number) {
-  if ($number % 2 === 0) {
-      echo $number . "は偶数です。\n";
-  } else {
-      echo $number . "は奇数です。\n";
+    if ($number % 2 === 0) {
+        echo $number . "は偶数です。\n";
+    } else {
+        echo $number . "は奇数です。\n";
+        return $number;
+    }
   }
-}
-
-distinguishNum(125);
-distinguishNum(136);
+  
+  distinguishNum(125);
+  distinguishNum(136);
 
 // Q13 関数とswitch文
+<?php
 function evaluateGrade($grade) {
   switch ($grade) {
       case 'A':
@@ -116,6 +121,7 @@ function evaluateGrade($grade) {
       default:
       echo '判定不明です。講師に問い合わせてください。' . "\n";
       break;
+      return $grade;
   }
 }
 
@@ -124,5 +130,4 @@ evaluateGrade('B');
 evaluateGrade('C');
 evaluateGrade('D');
 evaluateGrade('E');
-
 ?>

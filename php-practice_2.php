@@ -34,7 +34,7 @@ $personalInfos = [
   ],
 ];
 //問題1
-echo $personalInfos [1]["name"] . "の電話番号は" . $personalInfos [1]["tel"] . "です。";
+echo $personalInfos[1]["name"] . "の電話番号は" . $personalInfos[1]["tel"] . "です。";
 
 //問題2
 foreach ($personalInfos as $index => $personalInfo) {

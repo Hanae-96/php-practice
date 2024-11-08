@@ -65,37 +65,34 @@ foreach ($kregion as $prefecture => $city) {
 
 // Q10 関数-1
 function hello($name) {
-    echo $name . 'さん、こんにちは。' . "\n";
-    return;
+    return $name . "さん、こんにちは。" . "\n";
 }
 
-hello('上田');
-hello('大橋');
+echo hello("上田");
+echo hello("大橋");
 
-// Q11 関数-2
+/// Q11 関数-2
 function calcTaxInPrice($price) {
     $taxInPrice = $price * 1.1;
     {
-        echo $price . "円の税込み価格は" . $taxInPrice . "円です。" . "\n";
-        return $price;
+        return $price . "円の税込み価格は" . $taxInPrice . "円です。" . "\n";
     }
 }
 
-$taxInPrice = calcTaxInprice(1000);
+echo $taxInPrice = calcTaxInprice(1000);
 
 // Q12 関数とif文
 function distinguishNum($number) {
     if ($number % 2 === 0)
     {
-        echo $number . "は偶数です。\n";
+        return $number . "は偶数です。\n";
     } else {
-        echo $number . "は奇数です。\n";
-        return $number;
+        return $number . "は奇数です。\n";
         }
 }
   
-distinguishNum(125);
-distinguishNum(136);
+echo distinguishNum(125);
+echo distinguishNum(136);
 
 // Q13 関数とswitch文
 function evaluateGrade($grade) {

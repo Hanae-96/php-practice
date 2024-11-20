@@ -13,7 +13,8 @@ echo($num);
 // Q3 日付操作
 date_default_timezone_set('Asia/Tokyo');
 $today = date("Y年m月d日 H時i分s秒");
-    
+// $todayの中のデータ型は？ 
+
 echo '現在の時刻は' . $today . 'です。';
     
 
@@ -25,6 +26,7 @@ if ($device === 'windows' || $device === 'mac') {
 } else {
     echo 'どちらでもありません。';
 }
+// ()の中のデータ型は？
 
 // Q5 条件分岐-2 三項演算子
 $age = 27;
@@ -36,11 +38,17 @@ echo $message;
 $prefectures = ['東京都', '千葉県', '神奈川県', '埼玉県', '茨城県', '栃木県', '群馬県'];
 echo $prefectures[2] . "と". $prefectures[3] . "は関東地方の都道府県です";
 
+
+// りんご、みかん、ぶどう、いちご、キウイ
+// A型、やまださん、男性、09000000000、群馬県出身
+// 配列にまとめる
+
 // Q7 連想配列-1
 $kregion = ['東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市'];
 foreach ($kregion as $prefecture => $city) {
     echo $city . "\n";
 }
+
 // Q8 連想配列-2
 $kregion = ['東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市'];
 foreach ($kregion as $prefecture => $city) {
@@ -49,6 +57,8 @@ foreach ($kregion as $prefecture => $city) {
         break;
     }
 }
+
+//breakをこの位置に入れた理由もかねて、次回1から説明
 
 // Q9 連想配列-3
 $kregion = ['東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市'];
@@ -71,15 +81,15 @@ function hello($name) {
 echo hello("上田");
 echo hello("大橋");
 
-/// Q11 関数-2
-function calcTaxInPrice($price) {
-    $taxInPrice = $price * 1.1;
-    {
-        return $price . "円の税込み価格は" . $taxInPrice . "円です。" . "\n";
-    }
+// Q11 関数-2
+function calcTaxInPrice($no_tax) {
+    return $no_tax * 1.1;
 }
 
-echo $taxInPrice = calcTaxInprice(1000);
+$price = 1000;
+$taxInPrice = calcTaxInprice($price);
+echo $price . "円の商品の税込価格は" . $taxInPrice . "円です。" . "\n";
+//()内の引数を書き換える。
 
 // Q12 関数とif文
 function distinguishNum($number) {
@@ -113,9 +123,8 @@ function evaluateGrade($grade) {
 }
 
 echo evaluateGrade('A');
-echo evaluateGrade('B');
-echo evaluateGrade('C');
-echo evaluateGrade('D');
 echo evaluateGrade('E');
+//switch文を使った理由は？
+//functionから始まるコードは何の為にかいているか？
 
 ?>

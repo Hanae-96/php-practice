@@ -57,7 +57,7 @@ echo "\n";
 // Q3 オブジェクト-1
 class Student
 {
-    public $studentId; 
+    public $studentId;
     public $studentName;
     
     public function __construct($id, $name)
@@ -76,7 +76,7 @@ echo '学籍番号' . $ueda->studentId . '番の生徒は' . $ueda->studentName 
 
 echo "\n";
 
-// Q4 オブジェクト-
+// Q4 オブジェクト-2
 $ueda->attend('PHP') . "\n";
 
 echo "\n";

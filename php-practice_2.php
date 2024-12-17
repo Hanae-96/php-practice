@@ -92,7 +92,6 @@ $old_date = new DateTime("1992-04-25");
 $current_date = new DateTime();
 
 $passed_days = $old_date->diff($current_date);
-
 echo $passed_days->format("あの日から%a日経過しました。")  . "\n";
     
 ?>

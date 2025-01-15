@@ -103,31 +103,25 @@ echo $passed_days->format("あの日から%a日経過しました。")  . "\n";
 ### 出力文字列
 //りんごの税抜価格は100円です。
 //クラス
-
 class Item
 {
     public $name;
     public $price;
-    
+   
     public function __construct($name, $price)
     {
         $this->name = $name;
         $this->price = $price;
     }
-    
     public $includingTax;
     
-    public function fetchCalTaxInPrice()
+    public function fetchCalTaxInPrice($includingTax)
     {
-        $this->includingTax = $this->price * 1.1;
-        echo $this->name . "の税込み価格は" . $this->includingTax ."円です。" . "\n";
+        return $includingTax = $this->price * 1.1;
     }
-
 }
-
 $apple = new Item("りんご", 100);
 echo $apple->name . "の税抜価格は" . $apple->price . "円です。" . "\n";
-
 ## Q2
 // Q1で使用した商品クラスを同じく使用して、条件を満たした上で下記の文字列を出力してください。
 ### 条件
@@ -135,8 +129,7 @@ echo $apple->name . "の税抜価格は" . $apple->price . "円です。" . "\n"
 // - fetchCalTaxInPriceメソッドの返り値を文字列結合して、最終的な文字列を完成させてください。
 ### 出力文字列
 // みかんの税込価格は220円です。
-
 $orange = new Item("みかん", 200);
-$orange->fetchCalTaxInPrice();
+echo $orange->name . "の税込み価格は" . $orange->fetchCalTaxInPrice($orange->price) ."円です。" . "\n";
 
 ?>
